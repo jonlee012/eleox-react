@@ -1,12 +1,36 @@
 import React, {useState} from 'react';
+import { encode } from "base-64";
+const URL = 'https://eleox-interview-api-7n5su.ondigitalocean.app/';
+
 
 function LoginForm({ Login, error }){
     const [details, setDetails] = useState({name:"", username:"", password: ""});
+
     const submitHandler = e => {
         e.preventDefault();
 
-        Login(details);
-    }
+        fetch(URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: details.username,
+                password: details.password
+        })
+            .then(resp => resp.json())
+                .then((result) => {
+                    if(result.message === "SUCCESS"){
+                        alert("You are logged in.");
+                        // this.goToMain();
+                        Login(details);
+                    } else {
+                        alert("Please check your login information.");
+                    }
+                })
+        })
+         }
+
+
+
+
 
     return (
 
