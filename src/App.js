@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 // import {Routes, Route, useNavigate} from 'react-router-dom';
 import './App.css';
 import LoginForm from './components/LoginForm';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import Dashboard from './components/Dashboard/Dashboard';
+// import Preferences from './components/Preferences/Preferences';
 
 function App() {
 
@@ -16,6 +19,7 @@ function App() {
   const [error, setError] = useState("");
 
   const Login = details => {
+    
     console.log(details);
     if (details.username == adminUser.username && details.password == adminUser.password){
       console.log("logged in");
@@ -27,6 +31,7 @@ function App() {
       console.log("details do not match");
       alert("incorrect credentials")
     }
+  
   }
 
   const Logout = () => {
@@ -44,11 +49,22 @@ function App() {
       ) : (
          <LoginForm Login={Login} error={error} />
       )}
-
-
-
     </div>
   );
+//   <div className="wrapper">
+//     <h1>Application</h1>
+//     <BrowserRouter>
+//       <Switch>
+//         <Route path="/dashboard">
+//           <Dashboard />
+//         </Route>
+//         <Route path="/preferences">
+//           <Preferences />
+//         </Route>
+//       </Switch>
+//     </BrowserRouter>
+//   </div>
+// );
 }
 
 export default App;
