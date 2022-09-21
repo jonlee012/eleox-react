@@ -6,30 +6,27 @@ const URL = 'https://eleox-interview-api-7n5su.ondigitalocean.app/';
 function LoginForm({ Login, error }){
     const [details, setDetails] = useState({name:"", username:"", password: ""});
 
-    const submitHandler = e => {
+    const submitHandler = async(e) => {
         e.preventDefault();
-
-        fetch(URL, {
-            method: 'POST',
-            body: JSON.stringify({
-                username: details.username,
-                password: details.password
-        })
-            .then(resp => resp.json())
-                .then((result) => {
-                    if(result.message === "SUCCESS"){
-                        alert("You are logged in.");
-                        // this.goToMain();
-                        Login(details);
-                    } else {
-                        alert("Please check your login information.");
-                    }
-                })
-        })
-         }
-
-
-
+        Login(details);
+        console.log(details);
+        await fetch (URL, {
+        method: "POST",
+        body: JSON.stringify({
+            username: details.username,
+            password: details.password
+        }),
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            if(result.message === "SUCCESS"){
+                alert("You are logged in.");
+                Login(details);
+            } else {
+                alert("Please check your login information.");
+            }
+        });
+    }
 
 
     return (
