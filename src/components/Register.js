@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import * as Yup from 'yup'
 
-import './App.css'
+import '../App.css'
 
-export default function Register() {
+const Register = () => {
 
     return (
         <div className="text-center m-5-auto">
             <h2>Join us</h2>
             <h5>Create your personal account</h5>
-            <form action="/home">
+            <form action="/">
                 <p>
                     <label>Username</label><br/>
                     <input type="text" name="first_name" required />
@@ -30,3 +30,5 @@ export default function Register() {
     )
 
 }
+
+export default Register;
