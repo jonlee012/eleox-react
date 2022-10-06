@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
 import { encode } from "base-64";
-import { Navigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 
 
-function LoginForm({ Login, error }){
+function LoginForm({ user, error }){
     // const [details, setDetails] = useState({name:"", username:"", password: ""});
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory();
-    const navigate = useNavigate();
 
     // const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
@@ -32,7 +30,7 @@ function LoginForm({ Login, error }){
     })
         fetch(URL, token).then((response) => response.json())
         .then((data) => {
-            history.push("/dashboard");
+            user.history.push("/dashboard");
             console.log('Success:', data);
         })
             .catch((error) => {
