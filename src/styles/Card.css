@@ -2,12 +2,14 @@
     margin-top: 20px;
     width: 250px;
     overflow: hidden;
-    box-shadow: 0px 0px 15px -5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     animation: ease-in;
     display: inline-flex;
     margin-left: 15px;
     margin-right: 15px;
+    padding-bottom: 10px;
+    border-radius: 20px;
 }
 
 .card-container:hover{
@@ -19,6 +21,9 @@
 .image-container img{
     overflow:hidden;
     height: auto;
-  
-    
+}
+
+.photo{
+    width: 250px;
+    height: auto;
 }
