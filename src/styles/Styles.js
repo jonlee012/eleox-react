@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 //Styled Background
-import background from './../assets/pexels-pixabay-373543.jpeg';
+import background from './../img/pexels-pixabay-373543.jpeg';
 
 // react router
 import { Link } from 'react-router-dom';
@@ -9,12 +9,14 @@ import { Link } from 'react-router-dom';
 
 export const colors ={
     primary: "#fff",
-    theme: "#da1a1a",
+    theme: "#1a67da",
     light1: "#F3F4F6",
     light2: "#E5E7EB",
     dark1: "#1F2937",
     dark2: "#4B5563",
-    dark3: "#9CA3AF"
+    dark3: "#9CA3AF",
+    red: "#da1a1a",
+    icon: "#00FEDE"
 }
 
 
@@ -60,7 +62,7 @@ export const DashSubTitle = styled.p`
 font-size: ${(props) => props.size}px;
 text-align: center;
 color: ${colors.primary};
-
+padding-top: 15px;
 `;
 
 //h2 Css
@@ -163,26 +165,48 @@ font-weight: bold;
 export const  StyledFormArea = styled.div`
 background-color: ${props => props.bg || colors.light1};
 text-align:center;
+  border-radius: 20px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+
 padding:45px 55px;
+`;
+
+export const  DashFormArea = styled.div`
+background-color: ${props => props.bg || colors.light1};
+text-align:center;
+  border-radius: 20px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+padding-bottom:30px;
+
 `;
 
 //similir to first button used same css to implmant
 export const StyledFormButton = styled.button`
+{
 padding:10px;
 width: 150px;
 background-color: transparent;
 font-size:16px;
-border: 2px solid ${colors.theme};
+border: 2px solid ${colors.dark1};
 border-radius:25px;
 color: ${colors.theme};
 transition: ease-in-out 0.3s;
 outline:0;
 
 &:hover{
-    background-color: ${colors.theme};
+    background-color: ${colors.dark3};
     color: ${colors.primary};
     cursor:pointer;
 }
+
 `;
 
 //Error Messege Components
@@ -201,6 +225,13 @@ font-size: ${(props) => props.size}px;
 text-align: center;
 color: ${(props) => (props.color? props.color : colors.dark2)};
 // padding-top: 2px;
+margin-top: 5px;
+`;
+//extract component
+export const ExtraSmallText = styled.p`
+font-size:11px;
+text-align: center;
+color: ${(props) => (props.color? props.color : colors.dark3)};
 margin-top: 5px;
 `;
 
