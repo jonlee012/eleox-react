@@ -31,6 +31,10 @@ const getEmail = (userInfo) => {
     const {email} = userInfo;
     return `${email}`;
 }
+const getAvatar = (userInfo) => {
+    const {avatar} = userInfo;
+    return `${avatar}`;
+}
 
 const Dashboard = () => {
     let people = [];
