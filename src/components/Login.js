@@ -80,10 +80,10 @@ const Login = () => {
                             fetch(url, config)
                                 .then((response) => response.json())
                                 .then((data) => {
-                                    console.log('Success:', data);
+                                    // console.log('Success:', data);
 
                                     for (let value of Object.values(data)) {
-                                        console.log((value));;
+                                        // console.log((value));;
                                         localStorage.setItem("token", value);
                                         // console.log(value);
                                         history.push("/dashboard");
