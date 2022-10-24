@@ -101,12 +101,13 @@ const Dashboard = () => {
         userInfos.map((userInfo) => (
             <div className="card-container" key={userInfo.id}>
                     <DashFormArea  bg={colors.dark1}>
-                        <img className="photo" src={userInfo.avatar} />
+                        <img className="photo" src={getAvatar(userInfo)} />
                         <DashSubTitle size={20}>
                             {getFullUserName(userInfo)}
                         </DashSubTitle>
                         <ExtraSmallText>
                             {getJobTitle(userInfo)}
+                            <br/>
                             {getEmail(userInfo)}
                         </ExtraSmallText>
                     </DashFormArea>
